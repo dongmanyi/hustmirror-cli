@@ -22,7 +22,7 @@ Commands: (use \`$program help [command]\` to get more information)
    autodeploy                 Deploy suggested configuration file
    recover                    Recover the configuration file
    autorecover                Recover deployed and recoverable configuration file
-   install                    Install this script to user's local bin
+   install                    Install this script to /usr/local/bin
 
 Commands alias:
    h                          help
@@ -30,7 +30,7 @@ Commands alias:
    ad                         autodeploy
    r                          recover
    ar                         autorecover
-   i|u|update                 install
+   i|up|update                 install
 
 Examples:
 - Enter interact mode
@@ -89,13 +89,13 @@ Usage: $program recover [targets...]
 
 "
 
-_help_install="Install (Update) this script online to user's local bin.
+_help_install="Install (Update) this script online to /usr/local/bin.
 
 Usage: $program install
-       $program i | u | update (alias)
+       $program i | up | update (alias)
 
-Note: This command will install the script to ~/.local/bin, and add it to
-      PATH in ~/.bashrc or ~/.zshrc.
+Note: This command will install the script to /usr/local/bin.
+      When run as a non-root user, it uses sudo for privileged operations.
 
 "
 
@@ -115,7 +115,7 @@ _help_ad=${_help_autodeploy}
 _help_r=${_help_recover}
 _help_ar=${_help_autorecover}
 _help_i=${_help_install}
-_help_u=${_help_install}
+_help_up=${_help_install}
 _help_h=${_help_help}
 _help_update=${_help_install}
 
