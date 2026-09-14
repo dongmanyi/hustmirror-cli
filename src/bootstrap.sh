@@ -9,7 +9,7 @@ case "$1" in
 	-V | --version)
 		exit 0
 		;;
-	-h | --help | help) # print help
+	-h | --help | help | h) # print help
 		shift 1
 		display_help $@
 		exit 0
